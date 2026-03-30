@@ -1,25 +1,21 @@
 public class MenuModerno {
     
     public static void main(String[] args) {
-        int opcion = 3;
-        switch (opcion) {
-            case 1:
-                System.out.println("Opcion 1");
-                break;
-            case 2:
-                System.out.println("Opcion 2");
-                break;
-            case 3:
-                System.out.println("Opcion 3");
-                break;
-            case 4:
-                System.out.println("Opcion 4");
-                break;
         
-            default:
-                System.out.println("opcion inválida");
-                break;
+        int opcion = 4;
+        switch(opcion){
+
+            case 1 -> System.out.println("opcion 1");
+            case 2 -> System.out.println("opcion 2");
+            case 3 -> System.out.println("opcion 3");
+            case 4,5 -> System.out.println("opcion 4 o 5");
+            default -> System.out.println("default");
+            
+
+
         }
+
     }
+   
 
 }
