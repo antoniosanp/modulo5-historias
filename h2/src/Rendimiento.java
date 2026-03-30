@@ -34,8 +34,10 @@ public class Rendimiento {
 
         promedio = (int) this.calcularPromedio(indice);
 
-
-
         return promedio;
+    }
+
+    public void imprimirNotas(){
+        
     }
 }

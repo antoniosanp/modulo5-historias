@@ -12,7 +12,6 @@ public class MenuModerno {
             default -> System.out.println("default");
             
 
-
         }
 
     }
