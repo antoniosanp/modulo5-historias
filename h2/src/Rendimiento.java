@@ -1,43 +1,33 @@
 public class Rendimiento {
 
     public int cantidadCoders;
-    public double[][] matrizRendimiento;
+    public double[][] matrizRendimiento; // Matriz [coders][trimestres] calificaciones
 
-    public Rendimiento(int cantidadCoders){
-        this.cantidadCoders = cantidadCoders;
-        this.matrizRendimiento = new double[cantidadCoders][3];
-        
+    public Rendimiento(int numeroCoders){
+        this.cantidadCoders = numeroCoders;
+        this.matrizRendimiento = new double[numeroCoders][3];
     }
 
-    public void agregarNotas(int indice, double nota1, double nota2, double nota3){
-        if (indice >= this.cantidadCoders){return;}
-
-        this.matrizRendimiento[indice] = new double[]{nota1,nota2,nota3};
-        return;
+    public void agregarNotas(int indiceCoder, double notaTrimestre1, double notaTrimestre2, double notaTrimestre3){
+        if (indiceCoder >= this.cantidadCoders){return;}
+        this.matrizRendimiento[indiceCoder][0] = notaTrimestre1;
+        this.matrizRendimiento[indiceCoder][1] = notaTrimestre2;
+        this.matrizRendimiento[indiceCoder][2] = notaTrimestre3;
     }
 
-    public double calcularPromedio(int indice){
-        double promedio = 0;
-        if (indice >= this.cantidadCoders){return -1;}
-
-        for (double nota : this.matrizRendimiento[indice]){
-            promedio += nota;
+    public double calcularPromedio(int indiceCoder){
+        // TASK 3: For anidados para recorrer matriz 2D
+        double sumaNotas = 0;
+        if (indiceCoder >= this.cantidadCoders){return -1;}
+        for (int trimestre = 0; trimestre < 3; trimestre++) {
+            sumaNotas += matrizRendimiento[indiceCoder][trimestre];
         }
-        promedio /= 3;
-
-        return promedio;
+        return sumaNotas / 3;
     }
 
-    public int promedioSimple(int indice){
-        int promedio = 0;
-        if (indice >= this.cantidadCoders) {return -1;}
-
-        promedio = (int) this.calcularPromedio(indice);
-
-        return promedio;
-    }
-
-    public void imprimirNotas(){
-        
+    public int promedioSimple(int indiceCoder){
+        // TASK 3: Casting double->int trunca precisión decimal
+        if (indiceCoder >= this.cantidadCoders) {return -1;}
+        return (int) calcularPromedio(indiceCoder);
     }
 }

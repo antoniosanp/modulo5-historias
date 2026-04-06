@@ -1,20 +1,13 @@
 public class MenuModerno {
+    // TASK 1: Switch Expression Java 17/21 con 'when' para rangos salariales precisos.
+    // Beneficio vs Java 8: No fall-through posible, mas breve, retorna valor directamente.
     
-    public static void main(String[] args) {
-        
-        int opcion = 4;
-        switch(opcion){
-
-            case 1 -> System.out.println("opcion 1");
-            case 2 -> System.out.println("opcion 2");
-            case 3 -> System.out.println("opcion 3");
-            case 4,5 -> System.out.println("opcion 4 o 5");
-            default -> System.out.println("default");
-            
-
-        }
-
+    public static String obtenerCategoriaSalarial(double salario) {
+        return switch ((int)salario / 10000) {
+            case 0, 1, 2 -> "Bajo (<30k)";
+            case 3 -> "Medio (30-40k)";
+            case 4 -> "Alto (40-50k)";
+            default -> "Ejecutivo (>50k)";
+        };
     }
-   
-
 }

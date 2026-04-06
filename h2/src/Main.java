@@ -1,28 +1,9 @@
-import java.util.Arrays;
-import java.util.Scanner;
-
+/* Main H2: Refactorizado TASK 1-4 con variables descriptivas (no var anonimos).
+ * Switch legacy/moderno, var inferencia opcional pero nombres claros: notaTrimestre1, salarioEmpleado, etc.
+ * Run con Code Runner: config "java": "cd \"$dir\" && javac *.java && java Main"
+ */
 public class Main {
     public static void main(String[] args) {
-        
-        Scanner sc = new Scanner(System.in);
-        
-        int cantidad = Validar.validarEntero("cantidad de codificadores: ", sc);
-
-        Rendimiento matriz = new Rendimiento(cantidad);
-
-        for (int i = 0; i < cantidad; i ++){
-            System.out.println(" ingrese notas del coder " + (i + 1));
-            
-            double nota1 = Validar.validarNota("nota 1:", sc);
-            double nota2 = Validar.validarNota("nota 2:", sc);
-            double nota3 = Validar.validarNota("nota 3:", sc);
-
-            matriz.agregarNotas(i, nota1, nota2, nota3);
-        }
-
-        System.out.println(Arrays.deepToString(matriz.matrizRendimiento));
-
-        sc.close();
-
+        MenuClasico.main(args); // Lanza menú principal activo
     }
 }
