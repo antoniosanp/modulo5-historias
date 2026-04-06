@@ -34,7 +34,7 @@ public class Main {
         // Lógica de negocio
         emp1.calcularSalarioFinal();
         out.println("Salario Final: " + emp1.salarioFinal);
-        out.println("Elegible: " + emp1.validarElegibilidad());
+        //out.println("Elegible: " + emp1.validarElegibilidad());
 
         // Laboratorio de nulos: Helpful NullPointerExceptions (Java 14+)
         out.println("\nLABORATORIO NULOS:");
