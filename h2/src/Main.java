@@ -13,7 +13,7 @@ public class Main {
         for (int i = 0; i < cantidad; i ++){
             System.out.println(" ingrese notas del coder " + (i + 1));
             
-            double nota1 = Validar.validarNota("nota 1 tin:", sc);
+            double nota1 = Validar.validarNota("nota 1:", sc);
             double nota2 = Validar.validarNota("nota 2:", sc);
             double nota3 = Validar.validarNota("nota 3:", sc);
 
